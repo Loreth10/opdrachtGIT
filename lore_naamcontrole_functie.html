@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let voornaam = "Lore";
+        let achternaam = "Thomas";
+
+        let input = prompt("wat is je naam?");
+
+        function controle(naam) {
+            
+            
+
+            if (naam == null) {
+                document.write("u heeft geannuleerd!");
+                return false;
+            }
+            else if (naam.length == 0) {
+                document.write("u heeft niets ingegeven!");
+                return false;
+            }
+            else if (naam.length == 1) {
+                document.write("er zijn minder dan 2 karakters ingegeven.")
+                return false;
+            }
+            else {
+                naam = naam.substring(0, 1).toUpperCase() + naam.substring(1);  
+                return true;
+            }
+        }
+        
+        
+        controle(input);
+
+        if (controle(input) != false) {
+            let input2 = prompt("wat is je achternaam?");
+            controle(input2);
+            input = input.substring(0, 1).toUpperCase() + input.substring(1);
+            input2 = input2.substring(0, 1).toUpperCase() + input2.substring(1);
+            
+            if (controle(input2) != false ) {
+                document.write("Hey " + input + " " + input2);
+            }
+        }
+
+        
+    </script>
+
+</body>
+</html>
